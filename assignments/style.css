@@ -1,1 +1,39 @@
+/* Page background */
+body {
+  background-color: powderblue;
+  font-family: Arial, sans-serif;
+}
 
+/* Main heading */
+h1 {
+  text-align: center;
+  color: darkblue;
+}
+
+/* Space between list items */
+li {
+  margin-bottom: 10px;
+}
+
+/* Nested list styling */
+ol ol {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Link styling */
+a {
+  color: darkred;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Subheading */
+h5 {
+  margin-top: 20px;
+  color: #333;
+}
