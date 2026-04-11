@@ -1,13 +1,13 @@
 /* Page background */
 body {
-  background-color: powderblue;
+  background-color: lightgrey;
   font-family: Arial, sans-serif;
 }
 
 /* Main heading */
 h1 {
   text-align: center;
-  color: darkblue;
+  color: black;
 }
 
 /* Space between list items */
