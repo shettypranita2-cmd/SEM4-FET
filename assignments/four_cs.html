@@ -1,1 +1,85 @@
+<html>
+<head>
+<style>
+body {
+  background-color: linen;
+  font-family: Arial;
+}
 
+h1 {
+  text-align: center;
+  color: maroon;
+}
+
+p {
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+#output {
+  font-weight: bold;
+  margin-top: 15px;
+  color: darkblue;
+}
+</style>
+
+<script>
+function checkSkill() {
+  let skill = document.getElementById("skillInput").value.toLowerCase().trim();
+
+  // List of valid skills
+  let validSkills = ["html", "css", "javascript", "python", "java", "c", "c++", "react", "node", "sql"];
+
+  if (skill === "") {
+    document.getElementById("output").innerHTML = "Please enter a skill.";
+    return;
+  }
+
+  if (validSkills.includes(skill)) {
+    document.getElementById("output").innerHTML =
+      skill.toUpperCase() + " is a valid programming skill 👍";
+  } else {
+    document.getElementById("output").innerHTML =
+      skill + " is NOT recognized as a programming skill ❌";
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Assignment CSS 1</h1>
+
+<h2>PRANITA SHETTY</h2>
+
+<p>
+Enter a skill below to check whether it is a valid programming skill or not.
+</p>
+
+<!-- ✅ Skill input section -->
+<input type="text" id="skillInput" placeholder="Enter your skill">
+<button onclick="checkSkill()">Check Skill</button>
+
+<p id="output"></p>
+
+</body>
+</html>
