@@ -15,6 +15,12 @@ p.italic {
 p {
   font-size: 20px;
 }
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+}
 </style>
 
 <script>
@@ -37,11 +43,6 @@ function myfunction() {
     alert("You cancelled the prompt.");
   }
 }
-
-// ✅ Wait 2 seconds AFTER page loads, then show prompt
-window.addEventListener("load", function() {
-  setTimeout(myfunction, 2000); // 2000 ms = 2 seconds
-});
 </script>
 
 </head>
@@ -64,6 +65,9 @@ Over the past year and a half, I have been focusing on my academic studies while
 I am a dedicated and motivated individual who is always willing to learn and grow. My goal is to build a strong career in the field of computer science and contribute to meaningful projects in the future.
 </p>
 
+<!-- ✅ Button added here -->
+<button onclick="myfunction()">Click Here to Answer</button>
+
 <h3> click the link view my home page </h3>
 
 <h4>
@@ -74,4 +78,5 @@ my home page
 
 </body> 
 </html>
+
 
