@@ -1,24 +1,40 @@
 <html>
 <head>
+<title>Assignment 5 - Language Checker</title>
+
 <style>
 body {
-  background-color: linen;
+  background-color: powderblue;
   font-family: Arial;
 }
 
 h1 {
   text-align: center;
-  color: maroon;
+  color: darkblue;
 }
 
-p {
-  font-size: 18px;
+li {
+  margin-bottom: 10px;
+}
+
+.container {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid darkblue;
+  background-color: white;
+  border-radius: 10px;
+}
+
+input {
+  padding: 8px;
+  font-size: 16px;
+  width: 250px;
 }
 
 button {
-  padding: 10px 15px;
-  margin: 10px;
-  background-color: maroon;
+  padding: 8px 12px;
+  margin-left: 10px;
+  background-color: darkblue;
   color: white;
   border: none;
   cursor: pointer;
@@ -26,40 +42,38 @@ button {
 }
 
 button:hover {
-  background-color: darkred;
-}
-
-input {
-  padding: 8px;
-  font-size: 16px;
+  background-color: navy;
 }
 
 #output {
-  font-weight: bold;
   margin-top: 15px;
-  color: darkblue;
+  font-size: 18px;
+  font-weight: bold;
+  color: darkgreen;
 }
 </style>
 
 <script>
-function checkSkill() {
-  let skill = document.getElementById("skillInput").value.toLowerCase().trim();
+function checkLanguage() {
 
-  // List of valid skills
-  let validSkills = ["html", "css", "javascript", "python", "java", "c", "c++", "react", "node", "sql"];
+  let input = document.getElementById("userInput").value.toLowerCase().trim();
 
-  if (skill === "") {
-    document.getElementById("output").innerHTML = "Please enter a skill.";
-    return;
+  // Updated valid languages list
+  let languages = ["java", "python", "c++", "c", "html"];
+
+  let result = "";
+
+  if (input === "") {
+    result = "⚠ Please enter a programming language.";
+  }
+  else if (languages.includes(input)) {
+    result = "💻 " + input.toUpperCase() + " is a VALID programming language.";
+  }
+  else {
+    result = "❌ " + input + " is NOT in the list of valid programming languages.";
   }
 
-  if (validSkills.includes(skill)) {
-    document.getElementById("output").innerHTML =
-      skill.toUpperCase() + " is a valid programming skill 👍";
-  } else {
-    document.getElementById("output").innerHTML =
-      skill + " is NOT recognized as a programming skill ❌";
-  }
+  document.getElementById("output").innerText = result;
 }
 </script>
 
@@ -67,19 +81,38 @@ function checkSkill() {
 
 <body>
 
-<h1>Assignment CSS 1</h1>
+<h1>Assignment 5</h1>
 
-<h2>PRANITA SHETTY</h2>
+<ol>
+  <li>Programming Languages
+    <ol>
+      <li>Java</li>
+      <li>Python</li>
+      <li>C++</li>
+      <li>C</li>
+      <li>HTML</li>
+    </ol>
+  </li>
+</ol>
 
-<p>
-Enter a skill below to check whether it is a valid programming skill or not.
-</p>
+<div class="container">
 
-<!-- ✅ Skill input section -->
-<input type="text" id="skillInput" placeholder="Enter your skill">
-<button onclick="checkSkill()">Check Skill</button>
+  <h2>Language Checker</h2>
 
-<p id="output"></p>
+  <p>Enter a programming language to check if it is valid:</p>
+
+  <input type="text" id="userInput" placeholder="e.g. Python">
+
+  <button onclick="checkLanguage()">Check</button>
+
+  <p id="output"></p>
+
+</div>
+
+<h5>Click the link to view my home page</h5>
+<a href="https://github.com/shettypranita2-cmd/SEM4-FET/blob/main/assignments/five.html">
+My Home Page
+</a>
 
 </body>
 </html>
