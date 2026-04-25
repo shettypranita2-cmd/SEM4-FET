@@ -19,11 +19,22 @@ p {
 
 <script>
 function showPrompt() {
-  let answer = prompt("What is your favorite programming language?");
-  if (answer != null && answer != "") {
-    alert("Nice! " + answer + " is a great choice.");
+  let response = prompt("Do you enjoy learning new technologies? (yes/no)");
+
+  if (response != null) {
+    response = response.toLowerCase();
+
+    if (response === "yes") {
+      alert("That's awesome! Keep exploring and building new skills 🚀");
+    } 
+    else if (response === "no") {
+      alert("No worries! Everyone learns at their own pace 😊");
+    } 
+    else {
+      alert("Please answer with 'yes' or 'no'.");
+    }
   } else {
-    alert("You didn't enter anything.");
+    alert("You cancelled the prompt.");
   }
 }
 </script>
