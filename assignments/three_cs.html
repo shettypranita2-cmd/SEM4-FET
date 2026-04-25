@@ -38,8 +38,10 @@ function myfunction() {
   }
 }
 
-// ✅ Runs AFTER full page load
-window.addEventListener("load", myfunction);
+// ✅ Wait 2 seconds AFTER page loads, then show prompt
+window.addEventListener("load", function() {
+  setTimeout(myfunction, 2000); // 2000 ms = 2 seconds
+});
 </script>
 
 </head>
