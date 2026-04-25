@@ -3,44 +3,68 @@
 <style>
 body {
   background-color: linen;
+  font-family: Arial, sans-serif;
 }
+
 h1 {
   text-align: center;
   color: maroon;
   margin-left: 50px;
 } 
+
 p.italic {
   font-style: italic;
 }
+
 p {
   font-size: 20px;
 }
+
 button {
   padding: 10px 15px;
   font-size: 16px;
   margin: 20px;
   cursor: pointer;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+#result {
+  font-size: 18px;
+  margin: 20px;
+  color: darkblue;
+  font-weight: bold;
 }
 </style>
 
 <script>
-function myfunction() {
+function askUser() {
   let response = prompt("Do you enjoy learning new technologies? (yes/no)");
 
   if (response != null) {
     response = response.toLowerCase();
 
     if (response === "yes") {
-      alert("That's awesome! Keep exploring and building new skills 🚀");
+      document.getElementById("result").innerHTML =
+        "Great! Keep exploring and building your tech skills 🚀";
     } 
     else if (response === "no") {
-      alert("No worries! Everyone learns at their own pace 😊");
+      document.getElementById("result").innerHTML =
+        "That's okay! Learning happens step by step 😊";
     } 
     else {
-      alert("Please answer with 'yes' or 'no'.");
+      document.getElementById("result").innerHTML =
+        "Please answer with 'yes' or 'no'.";
     }
   } else {
-    alert("You cancelled the prompt.");
+    document.getElementById("result").innerHTML =
+      "You cancelled the question.";
   }
 }
 </script>
@@ -51,30 +75,29 @@ function myfunction() {
 
 <h1> Assignment CSS 1 </h1>
 
-<h2> PRANITA SHETTY</h2><br>
+<h2> PRANITA SHETTY</h2>
 
-<h3>
 <p class="italic">
 Hello, my name is Pranita. I am currently in my second year of pursuing a Bachelor of Engineering (BE) in the Computer Science department.
 </p>
-</h3>
 
 <p>
-Over the past year and a half, I have been focusing on my academic studies while also working on developing additional skills to enhance my knowledge. I am interested in learning new technologies and improving my practical understanding of my field.
-
-I am a dedicated and motivated individual who is always willing to learn and grow. My goal is to build a strong career in the field of computer science and contribute to meaningful projects in the future.
+Over the past year and a half, I have been focusing on my academic studies while also developing additional skills. I am especially interested in learning new technologies and improving my practical knowledge in computer science.
 </p>
 
-<!-- ✅ Button added here -->
-<button onclick="myfunction()">Click Here to Answer</button>
+<!-- ✅ New interactive section -->
+<h3>Your Opinion Matters!</h3>
+<p>Click the button below and tell us about your interest in learning new technologies.</p>
 
-<h3> click the link view my home page </h3>
+<button onclick="askUser()">Answer the Question</button>
 
-<h4>
+<p id="result"></p>
+
+<h3>Click the link to view my home page</h3>
+
 <a href="https://github.com/shettypranita2-cmd/SEM4-FET/tree/main/assignments">
-my home page
+My Home Page
 </a>
-</h4>
 
 </body> 
 </html>
