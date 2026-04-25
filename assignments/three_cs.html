@@ -17,9 +17,6 @@ p {
 }
 </style>
 
-</head>
-
-<body>
 <script>
 function myfunction() {
   let response = prompt("Do you enjoy learning new technologies? (yes/no)");
@@ -40,7 +37,15 @@ function myfunction() {
     alert("You cancelled the prompt.");
   }
 }
+
+// ✅ Runs AFTER full page load
+window.addEventListener("load", myfunction);
 </script>
+
+</head>
+
+<body>
+
 <h1> Assignment CSS 1 </h1>
 
 <h2> PRANITA SHETTY</h2><br>
