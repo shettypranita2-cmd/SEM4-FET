@@ -1,1 +1,118 @@
+<html>
+<head>
+<title>Student Form</title>
 
+<script>
+function showData(e){
+  e.preventDefault();
+
+  let hobbies = Array.from(hobby.selectedOptions).map(o => o.value).join(", ");
+
+  out.innerHTML =
+  "Name: " + fname.value + "<br>" +
+  "Email: " + email.value + "<br>" +
+  "DOB: " + dob.value + "<br>" +
+  "Gender: " + gender.value + "<br>" +
+  "Course: " + course.value + "<br>" +
+  "Hobbies: " + hobbies + "<br>" +
+  "Agreement: " + (agree.checked ? "Yes" : "No");
+}
+</script>
+
+<style>
+body{
+  font-family: Arial;
+  background: linear-gradient(to right, powderblue, #9face6);
+}
+
+.box{
+  width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px gray;
+}
+
+input, select{
+  width: 100%;
+  margin: 5px 0 10px;
+  padding: 5px;
+}
+
+button{
+  width: 48%;
+  padding: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button[type="submit"]{
+  background: green;
+}
+
+button[type="reset"]{
+  background: red;
+}
+
+#out{
+  margin-top: 20px;
+  font-weight: normal;
+  color: black;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h3>Student Form</h3>
+
+<form onsubmit="showData(event)">
+
+Name:<br>
+<input id="fname">
+
+Email:<br>
+<input id="email">
+
+DOB:
+<input type="date" id="dob">
+
+Gender:
+<input type="radio"name="g" value="Male" id="gender"> Male
+<input type="radio"name="g" value="Female" id="gender"> Female
+<br><br>
+
+Course:<br>
+<select id="course">
+  <option>B.Tech</option>
+  <option>MCA</option>
+  <option>MBA</option>
+</select>
+
+Hobbies:<br>
+<select id="hobby" multiple size="3">
+  <option>Reading</option>
+  <option>Sports</option>
+  <option>Music</option>
+</select>
+
+<br>
+
+<input type="checkbox" id="agree"> I agree to terms<br><br>
+
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+
+</form>
+
+<div id="out"></div>
+
+</div>
+
+</body>
+</html>
