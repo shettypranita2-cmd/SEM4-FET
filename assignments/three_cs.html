@@ -1,16 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Assignment CSS 3</title>
+
 <style>
 body {
   background-color: linen;
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
   color: maroon;
-  margin-left: 50px;
-} 
+}
+
+h2, h3 {
+  color: black;
+}
 
 p.italic {
   font-style: italic;
@@ -45,26 +56,43 @@ button:hover {
 
 <script>
 function askUser() {
+
+  // PROMPT - takes input from user
   let response = prompt("Do you enjoy learning new technologies? (yes/no)");
 
-  if (response != null) {
-    response = response.toLowerCase();
-
-    if (response === "yes") {
-      document.getElementById("result").innerHTML =
-        "Great! Keep exploring and building your tech skills 🚀";
-    } 
-    else if (response === "no") {
-      document.getElementById("result").innerHTML =
-        "That's okay! Learning happens step by step 😊";
-    } 
-    else {
-      document.getElementById("result").innerHTML =
-        "Please answer with 'yes' or 'no'.";
-    }
-  } else {
+  if (response === null) {
+    alert("You cancelled the question.");
     document.getElementById("result").innerHTML =
       "You cancelled the question.";
+    return;
+  }
+
+  response = response.toLowerCase().trim();
+
+  if (response === "yes" || response === "y") {
+
+    // ALERT usage
+    alert("Great! Keep exploring your tech skills 🚀");
+
+    document.getElementById("result").innerHTML =
+      "Great! Keep exploring and building your tech skills 🚀";
+
+  } 
+  else if (response === "no" || response === "n") {
+
+    // ALERT usage
+    alert("That's okay! Learning happens step by step 😊");
+
+    document.getElementById("result").innerHTML =
+      "That's okay! Learning happens step by step 😊";
+
+  } 
+  else {
+
+    alert("Invalid input! Please enter yes or no.");
+
+    document.getElementById("result").innerHTML =
+      "Please answer with 'yes' or 'no'.";
   }
 }
 </script>
@@ -73,20 +101,20 @@ function askUser() {
 
 <body>
 
-<h1> Assignment CSS 3 </h1>
+<h1>Assignment CSS 3</h1>
 
-<h2> PRANITA SHETTY</h2>
+<h2>PRANITA SHETTY</h2>
 
 <p class="italic">
-Hello, my name is Pranita. I am currently in my second year of pursuing a Bachelor of Engineering (BE) in the Computer Science department.
+Hello, my name is Pranita. I am currently in my second year of pursuing a Bachelor of Engineering (BE) in Computer Science.
 </p>
 
 <p>
-Over the past year and a half, I have been focusing on my academic studies while also developing additional skills. I am especially interested in learning new technologies and improving my practical knowledge in computer science.
+I am interested in learning new technologies and improving my practical knowledge in computer science.
 </p>
 
-<!-- ✅ New interactive section -->
 <h3>Your Opinion Matters!</h3>
+
 <p>Click the button below and tell us about your interest in learning new technologies.</p>
 
 <button onclick="askUser()">Answer the Question</button>
@@ -95,11 +123,9 @@ Over the past year and a half, I have been focusing on my academic studies while
 
 <h3>Click the link to view my home page</h3>
 
-<a href="https://github.com/shettypranita2-cmd/SEM4-FET/tree/main/three_cs.html">
+<a href="https://github.com/shettypranita2-cmd/SEM4-FET/tree/main/three_cs.html" target="_blank">
 My Home Page
 </a>
 
-</body> 
+</body>
 </html>
-
-
