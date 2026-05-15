@@ -9,6 +9,7 @@ body{
   background: linear-gradient(to right, #cfd9df, #e2ebf0);
   text-align: center;
 }
+
 .box{
   width: 400px;
   margin: 50px auto;
@@ -18,11 +19,13 @@ body{
   box-shadow: 0 0 10px gray;
   text-align: left;
 }
+
 input, select{
   width: 100%;
   padding: 6px;
   margin: 5px 0;
 }
+
 button{
   width: 48%;
   padding: 8px;
@@ -30,9 +33,11 @@ button{
   color: white;
   cursor: pointer;
 }
+
 button[type="submit"]{
   background: green;
 }
+
 button[type="reset"]{
   background: red;
 }
@@ -52,14 +57,13 @@ function showData(e){
   let dob = document.getElementById("dob").value;
   let course = document.getElementById("course").value;
 
-  let deptBoxes = document.getElementsByName("dept");
+  let deptBox = document.getElementById("dept");
   let dept = [];
 
-  for (let i = 0; i < deptBoxes.length; i++) {
-    if (deptBoxes[i].checked) {
-      dept.push(deptBoxes[i].value);
-    }
+  for (let i = 0; i < deptBox.selectedOptions.length; i++) {
+    dept.push(deptBox.selectedOptions[i].value);
   }
+
   document.getElementById("out").innerHTML =
     "Name: " + name + "<br>" +
     "Email: " + email + "<br>" +
@@ -84,13 +88,17 @@ function showData(e){
 
 Name:<br>
 <input id="name">
+
 Email:<br>
 <input id="email">
+
 DOB:<br>
 <input type="date" id="dob">
 
 </fieldset>
+
 <br>
+
 <fieldset>
 <legend>Academic Details</legend>
 
@@ -100,13 +108,18 @@ Course:<br>
   <option>MCA</option>
   <option>MBA</option>
 </select>
+
 Department:<br>
-<input type="checkbox" name="dept" value="CSE"> CSE<br>
-<input type="checkbox" name="dept" value="ECE"> ECE<br>
-<input type="checkbox" name="dept" value="MECH"> MECH
+<select id="dept" multiple size="3">
+  <option>CSE</option>
+  <option>ECE</option>
+  <option>MECH</option>
+</select>
 
 </fieldset>
+
 <br>
+
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 
