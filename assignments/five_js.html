@@ -1,91 +1,98 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Student Form</title>
 
-<script>
-function showData(e){
-  e.preventDefault();
-
-  let hobbies = Array.from(hobby.selectedOptions).map(o => o.value).join(", ");
-
-  out.innerHTML =
-  "Name: " + fname.value + "<br>" +
-  "Email: " + email.value + "<br>" +
-  "DOB: " + dob.value + "<br>" +
-  "Gender: " + gender.value + "<br>" +
-  "Course: " + course.value + "<br>" +
-  "Hobbies: " + hobbies + "<br>" +
-  "Agreement: " + (agree.checked ? "Yes" : "No");
-}
-</script>
-
 <style>
 body{
   font-family: Arial;
-  background: linear-gradient(to right, powderblue, #9face6);
+  background: linear-gradient(to right, #cfd9df, #e2ebf0);
+  text-align: center;
 }
-
 .box{
   width: 400px;
   margin: 50px auto;
   background: white;
   padding: 15px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px gray;
+  border-radius: 15px;
+  box-shadow: 0 0 10px gray;
+  text-align: left;
 }
-
 input, select{
   width: 100%;
-  margin: 5px 0 10px;
-  padding: 5px;
+  padding: 6px;
+  margin: 5px 0;
 }
-
 button{
   width: 48%;
-  padding: 6px;
+  padding: 8px;
   border: none;
   color: white;
   cursor: pointer;
 }
-
 button[type="submit"]{
   background: green;
 }
-
 button[type="reset"]{
   background: red;
 }
 
 #out{
-  margin-top: 20px;
-  font-weight: normal;
-  color: black;
+  margin-top: 15px;
+  font-weight: bold;
 }
 </style>
+
+<script>
+function showData(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let dob = document.getElementById("dob").value;
+  let course = document.getElementById("course").value;
+
+  let deptBoxes = document.getElementsByName("dept");
+  let dept = [];
+
+  for (let i = 0; i < deptBoxes.length; i++) {
+    if (deptBoxes[i].checked) {
+      dept.push(deptBoxes[i].value);
+    }
+  }
+  document.getElementById("out").innerHTML =
+    "Name: " + name + "<br>" +
+    "Email: " + email + "<br>" +
+    "DOB: " + dob + "<br>" +
+    "Course: " + course + "<br>" +
+    "Department: " + dept.join(", ");
+}
+</script>
 
 </head>
 
 <body>
 
 <div class="box">
- 
+
 <h3>Student Form</h3>
 
 <form onsubmit="showData(event)">
 
-Name:<br>
-<input id="fname">
+<fieldset>
+<legend>Personal Details</legend>
 
+Name:<br>
+<input id="name">
 Email:<br>
 <input id="email">
-
-DOB:
+DOB:<br>
 <input type="date" id="dob">
 
-Gender:
-<input type="radio"name="g" value="Male" id="gender"> Male
-<input type="radio"name="g" value="Female" id="gender"> Female
-<br><br>
+</fieldset>
+<br>
+<fieldset>
+<legend>Academic Details</legend>
 
 Course:<br>
 <select id="course">
@@ -93,18 +100,13 @@ Course:<br>
   <option>MCA</option>
   <option>MBA</option>
 </select>
+Department:<br>
+<input type="checkbox" name="dept" value="CSE"> CSE<br>
+<input type="checkbox" name="dept" value="ECE"> ECE<br>
+<input type="checkbox" name="dept" value="MECH"> MECH
 
-Hobbies:<br>
-<select id="hobby" multiple size="3">
-  <option>Reading</option>
-  <option>Sports</option>
-  <option>Music</option>
-</select>
-
+</fieldset>
 <br>
-
-<input type="checkbox" id="agree"> I agree to terms<br><br>
-
 <button type="submit">Submit</button>
 <button type="reset">Reset</button>
 
