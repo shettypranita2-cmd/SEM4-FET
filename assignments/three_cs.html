@@ -13,24 +13,19 @@ body {
   line-height: 1.6;
   padding: 20px;
 }
-
 h1 {
   text-align: center;
   color: maroon;
 }
-
 h2, h3 {
   color: black;
 }
-
 p.italic {
   font-style: italic;
 }
-
 p {
   font-size: 20px;
 }
-
 button {
   padding: 10px 15px;
   font-size: 16px;
@@ -41,11 +36,9 @@ button {
   border: none;
   border-radius: 5px;
 }
-
 button:hover {
   background-color: darkred;
 }
-
 #result {
   font-size: 18px;
   margin: 20px;
@@ -57,7 +50,6 @@ button:hover {
 <script>
 function askUser() {
 
-  // PROMPT - takes input from user
   let response = prompt("Do you enjoy learning new technologies? (yes/no)");
 
   if (response === null) {
@@ -71,7 +63,6 @@ function askUser() {
 
   if (response === "yes" || response === "y") {
 
-    // ALERT usage
     alert("Great! Keep exploring your tech skills 🚀");
 
     document.getElementById("result").innerHTML =
@@ -108,7 +99,6 @@ function askUser() {
 <p class="italic">
 Hello, my name is Pranita. I am currently in my second year of pursuing a Bachelor of Engineering (BE) in Computer Science.
 </p>
-
 <p>
 I am interested in learning new technologies and improving my practical knowledge in computer science.
 </p>
@@ -122,7 +112,6 @@ I am interested in learning new technologies and improving my practical knowledg
 <p id="result"></p>
 
 <h3>Click the link to view my home page</h3>
-
 <a href="https://github.com/shettypranita2-cmd/SEM4-FET/tree/main/three_cs.html" target="_blank">
 My Home Page
 </a>
